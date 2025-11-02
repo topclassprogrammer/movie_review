@@ -1,0 +1,28 @@
+services:
+  elasticsearch:
+    image: elasticsearch:9.2.0
+    container_name: elasticsearch
+    environment:
+      - node.name=es01
+      - discovery.type=single-node
+      - ELASTIC_USERNAME=${ELASTIC_USERNAME}
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - xpack.security.enabled=true
+      - xpack.security.enrollment.enabled=false
+    ports:
+      - "9200:9200"
+
+  kibana:
+    image: kibana:9.2.0
+    container_name: kibana
+    environment:
+      - SERVER_NAME=${SERVER_NAME}
+      - ELASTICSEARCH_HOSTS=${ELASTICSEARCH_HOSTS}
+      - ELASTICSEARCH_USERNAME=${KIBANA_USER}
+      - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
+      - xpack.security.enabled=true
+      - xpack.security.enrollment.enabled=false
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch

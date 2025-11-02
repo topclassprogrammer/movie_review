@@ -1,0 +1,39 @@
+title:
+  faker: text
+  kwargs:
+    max_nb_chars: 50
+description:
+  faker: text
+release_date:
+  faker: date_between
+  kwargs:
+    start_date: '-20y'
+    end_date: 'now'
+genre:
+  faker: random_element
+  kwargs:
+    elements:
+      - Action
+      - Comedy
+      - Drama
+      - Horror
+      - Romance
+      - Thriller
+      - Science Fiction
+      - Adventure
+      - Fantasy
+director:
+  faker: name
+featured_actor:
+  faker: name
+imdb_rating:
+  faker: random_int
+  kwargs:
+    min: 1
+    max: 10
+users_rating:
+  faker: random_int
+  kwargs:
+    min: 1
+    max: 10
+
