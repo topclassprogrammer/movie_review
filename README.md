@@ -13,6 +13,6 @@
 
 ```bin/elasticsearch-reset-password -u kibana_system -i```
 
-```y``` и дважды ввести пароль такой же который мы записали в переменную ELASTIC_PASSWORD
+```y``` и дважды ввести пароль такой же который мы записали в переменную окружения ELASTIC_PASSWORD
 * Чтобы открыть Kibana необходимо перейти по адресу http://localhost:5601 и аутентифицироваться 
 под заданными переменными окружения ELASTIC_USERNAME и ELASTIC_PASSWORD
